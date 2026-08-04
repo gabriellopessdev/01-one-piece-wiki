@@ -6,3 +6,13 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Character {
+  id          String  @id @default(cuid())
+  externalId  Int     @unique
+  name        String
+  crew        String?
+  fruit       String?
+  imageUrl    String?
+  description String?
+}
